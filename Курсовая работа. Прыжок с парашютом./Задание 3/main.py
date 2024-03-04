@@ -1,7 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np
-
-
+# Исходные параметры модели
 g = 9.8
 m0 = 70
 mp = 15
@@ -18,6 +17,7 @@ k1 = Cx1*ro*S1/2
 H = 46
 tr = 3
 v0 = 0
+# Расчёт математической (теоретической) модели
 T = 500
 N = 20000
 dt = T/N
@@ -36,6 +36,7 @@ for i in range(N-1):
     if y[i+1]<0:
         break
     t[i+1] = t[i]+dt
+# Вывод полученного графика
 plt.title("v = v(y)")
 plt.xlabel('y, м', fontsize=14)
 plt.ylabel('v, м/с', fontsize=14)

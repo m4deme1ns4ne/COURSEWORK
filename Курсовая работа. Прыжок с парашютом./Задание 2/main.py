@@ -1,7 +1,6 @@
 from matplotlib import pyplot as plt
 import numpy as np
-
-
+#
 g = 9.8
 m0 = 70
 mp = 15
@@ -15,9 +14,10 @@ Cx0 = 0.5
 Cx1 = 1.28
 k0 = Cx0*ro*S0/2
 k1 = Cx1*ro*S1/2
-H = 46
-tr = 3
+H = 3000
+tr = 38
 v0 = 0
+#
 T = 500
 N = 20000
 dt = T/N
@@ -36,10 +36,10 @@ for i in range(N-1):
     if y[i+1]<0:
         break
     t[i+1] = t[i]+dt
-plt.title("v = v(y)")
-plt.xlabel('y, м', fontsize=14)
+
+plt.title("v = v(t)")
+plt.xlabel('t,c', fontsize=14)
 plt.ylabel('v, м/с', fontsize=14)
-plt.plot(y[:i], v[:i])
-plt.grid()
-plt.tight_layout()
+plt.plot(t[:i], v[:i])
+plt.grid(linewidth = '1')
 plt.show()
